@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-node
+    ports:
+      - "4200:4200" 
+      - "49153:49153"
+    volumes:
+      - "./www/yourproject:/usr/app"
+      - "node_modules:/usr/app/node_modules"
+volumes:
+node_modules:
